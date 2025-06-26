@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mecânicas - Híbrido de Turmas</title>
+
+  <!-- Fontes e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="mecanicas.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <img class="logo" id="logo" alt="Logo Híbrido" />
+    <div class="nav-links">
+      <a href="inicio.html"><i class="fas fa-home"></i> Início</a>
+      <a href="credts.html"><i class="fas fa-user"></i> Créditos</a>
+      <a href="mecanicas.html" class="active"><i class="fas fa-cogs"></i> Mecânicas</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1 id="tituloPagina"></h1>
+
+    <h2>Gameplay</h2>
+    <p>
+      O jogo é um Tower Defense em que o jogador planta árvores de açaí para gerar recursos (açaís) e posiciona personagens para defender a árvore do Açaí Gigante contra hordas de inimigos.
+      As hordas aumentam em dificuldade com inimigos mais fortes, rápidos e resistentes.
+    </p>
+
+    <video id="gameplayVideo" class="gameplay-video" controls>
+      <source type="video/mp4" />
+      Seu navegador não suporta o elemento de vídeo.
+    </video>
+
+    <h2>Personagens</h2>
+    <ul>
+      <li><strong>Boitatá:</strong> Cobra de fogo que pode se transformar em tora em brasa e queima inimigos próximos. Passiva aumenta ataque de personagens próximos.</li>
+      <li><strong>Curupira:</strong> Usa fogo como veneno. Passiva aumenta defesa das plantações próximas.</li>
+      <li><strong>Saci:</strong> Controla vento, lança tornado que causa dano em área e pode parar inimigos temporariamente com seu assobio.</li>
+      <li><strong>Iara:</strong> Sereia que só pode ficar na água. Usa charme para desacelerar inimigos e hipnose para inverter sua direção.</li>
+    </ul>
+
+    <h2>Mecânicas dos Personagens</h2>
+    <ul>
+      <li><strong>Iara:</strong> Pode ser movida para rios. Habilidades: Charme (projétil desacelera), Hipnose (inverte direção dos inimigos).</li>
+      <li><strong>Saci:</strong> Assobio para parar inimigos, tornado para dano em área, cachimbo que melhora tornado.</li>
+      <li><strong>Curupira:</strong> Dano elemental com fogo, molotov em área, boost de defesa para plantações.</li>
+      <li><strong>Boitatá:</strong> Tora em brasa para dano próximo, cuspe de fogo, passiva que aumenta ataque em área.</li>
+    </ul>
+
+    <h2>Inimigos</h2>
+    <ul>
+      <li><strong>DOOMshmirtz:</strong> Empresa malvada que destrói a floresta.</li>
+      <li><strong>Desmatadores:</strong> Vão direto para a árvore do Açaí Gigante.</li>
+      <li><strong>Fazendeiros com agrotóxicos:</strong> Envenenam árvores de açaí antes de atacar.</li>
+      <li><strong>Mini chefe - Guindaste:</strong> Inimigo forte com muita vida e dano.</li>
+    </ul>
+
+    <h2>Controles</h2>
+    <ul>
+      <li><i class="fas fa-mouse-pointer icon-inline"></i> <strong>Botão esquerdo do mouse:</strong> Abrir livro dos personagens, comprar e posicionar personagens.</li>
+      <li><i class="fas fa-keyboard icon-inline"></i> <strong>Tecla <span class="key-icon">ESC</span>:</strong> Abrir menu de opções (pause).</li>
+    </ul>
+
+    <h2>HUD e Interface</h2>
+    <p>
+      Um pergaminho no canto superior direito abre o livro dos personagens, onde o jogador pode comprar e ver detalhes das unidades usando os recursos gerados pelas árvores de açaí.
+    </p>
+    <p>
+      O menu de pausa exibe opções para sair do jogo, voltar ao menu principal, resetar a partida ou continuar jogando, controlado pela tecla <span class="key-icon">ESC</span> e mouse.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    NAVE Rio - Rio de Janeiro, RJ - 2025 - Oficina Integrada 2
+  </footer>
+
+  <script>
+    // Conteúdo dinâmico via JS
+    document.getElementById('tituloPagina').textContent = 'Mecânicas do Jogo';
+
+    const video = document.getElementById('gameplayVideo').querySelector('source');
+    video.src = 'assets/gameplay.mp4';
+    video.type = 'video/mp4';
+
+    const logo = document.querySelector('.logo');
+    logo.src = './assets/logo.png';
+    logo.alt = 'Logo Híbrido';
+  </script>
+
+</body>
+</html>

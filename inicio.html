@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amarath</title>
+
+  <!-- Fonte externa Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome para ícones -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
+  <link rel="stylesheet" href="inicio.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <img class="logo" id="logo" alt="Logo Híbrido" />
+    <div class="nav-links">
+      <a href="inicio.html" class="active"><i class="fas fa-home"></i> Início</a>
+      <a href="credts.html"><i class="fas fa-user"></i> Créditos</a>
+      <a href="mecanicas.html"><i class="fas fa-cogs"></i> Mecânicas</a>
+    </div>
+  </nav>
+
+  <header class="hero" data-aos="fade-up">
+    <div class="hero-text">
+      <h1 id="tituloPrincipal"></h1>
+      <h2>DESCUBRA A HISTÓRIA</h2>
+      <p>
+        Um projeto que combina diferentes salas, mentes criativas e muita energia em algo surpreendente.
+        Acompanhe a jornada de um estudante comum enfrentando desafios extraordinários em um universo caótico.
+      </p>
+      <a href="#secao" class="hero-btn">Saiba Mais →</a>
+    </div>
+    <div class="hero-image">
+      <img id="imagemPrincipal" alt="Imagem principal" />
+    </div>
+  </header>
+
+  <section class="sections-grid" id="secao">
+    <div class="section-box" data-aos="zoom-in">
+      <img src="ChatGPT Image 18 de abr. de 2025, 22_53_51.png" alt="Home" />
+      <h3>Home</h3>
+      <p>
+        Um projeto que combina diferentes salas, mentes criativas e muita energia em algo surpreendente.
+        Acompanhe a jornada de um estudante comum enfrentando desafios extraordinários em um universo caótico.
+      </p>
+    </div>
+    <div class="section-box" data-aos="zoom-in" data-aos-delay="100">
+      <img src="HISORIA.png" alt="História" />
+      <h3>História</h3>
+      <p>
+        Desmatadores, empresas de agronegócios e a famosa empresa do malvado DOOMshmirtz estão indo até a Amazônia para desmatar ela com fins lucrativos, mas eles não pensaram que as lendas místicas do Brasil iriam se juntar e batalhar contra eles para proteger a nossa fauna e flora.
+      </p>
+      <p>
+        A ideia é criticar as empresas que praticam comércio exagerado e insustentável, destruindo o meio ambiente aos poucos, misturando isso com a misticidade e cultura do folclore brasileiro.
+      </p>
+    </div>
+    <div class="section-box" data-aos="zoom-in" data-aos-delay="200">
+      <img src="INTRODUC.png" alt="Introdução" />
+      <h3>Introdução</h3>
+      <p>
+        O jogo se passa num mapa onde inimigos tentam chegar até a floresta para destruir uma árvore do Açaí Gigante, que é a "torre" do Tower Defense. O jogador planta árvores de açaí para ganhar frutas, que são usadas para comprar personagens inspirados no folclore brasileiro para defender a floresta.
+      </p>
+      <p>
+        As hordas de inimigos aumentam em dificuldade a cada rodada, e o jogador deve impedir que destruam a árvore principal para vencer. Árvores comuns só podem ser plantadas perto da água, próxima da Iara, e podem ser destruídas pelos inimigos.
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    NAVE Rio - Rio de Janeiro, RJ - 2025 - Oficina Integrada 2
+  </footer>
+
+  <script>
+    // Conteúdo dinâmico com JS
+    document.getElementById('tituloPrincipal').textContent = 'Amarath';
+    document.getElementById('imagemPrincipal').src = './assets/HISORIA.png';
+    document.getElementById('imagemPrincipal').alt = 'Imagem principal';
+
+    // Logo dinâmico
+    const logo = document.getElementById('logo');
+    logo.src = './assets/logo.png';
+    logo.alt = 'Logo Híbrido';
+  </script>
+
+</body>
+</html>
