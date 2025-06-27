@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mecânicas - Híbrido de Turmas</title>
+  <title> Amarath - mecânicas</title>
 
-  <!-- Fontes e ícones -->
+
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link
     rel="stylesheet"
@@ -34,7 +34,7 @@
     </p>
 
     <video id="gameplayVideo" class="gameplay-video" controls>
-      <source type="video/mp4" />
+      <source id="videoSource" src="" type="video/mp4" />
       Seu navegador não suporta o elemento de vídeo.
     </video>
 
@@ -82,12 +82,14 @@
   </footer>
 
   <script>
-    // Conteúdo dinâmico via JS
+    
     document.getElementById('tituloPagina').textContent = 'Mecânicas do Jogo';
 
-    const video = document.getElementById('gameplayVideo').querySelector('source');
-    video.src = 'assets/gameplay.mp4';
-    video.type = 'video/mp4';
+    const videoElement = document.getElementById('gameplayVideo');
+    const sourceElement = document.getElementById('videoSource');
+    sourceElement.src = 'gameplaydicria.mp4';
+    sourceElement.type = 'video/mp4';
+    videoElement.load(); 
 
     const logo = document.querySelector('.logo');
     logo.src = './assets/logo.png';
