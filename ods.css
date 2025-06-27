@@ -42,6 +42,11 @@ a:hover {
   font-size: 1rem;
   text-transform: uppercase;
   color: #DADED8;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #959581;
 }
 
 .nav-links a.active {
@@ -90,8 +95,7 @@ ul {
   margin-bottom: 1.5rem;
 }
 
-/* Lista de desenvolvedores */
-#developers-list li {
+ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,72 +110,15 @@ ul {
   position: relative;
 }
 
-/* Hover */
-#developers-list li:hover {
+ul li:hover {
   box-shadow: 0 0 14px #959581;
 }
 
-/* Container foto + nome alinhados */
-.user-info {
-  display: flex;
-  align-items: center;
+/* Nome da pessoa */
+ul li .name {
   flex-grow: 1;
-}
-
-/* Foto do usuário */
-.user-photo {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 1rem;
-  border: 2px solid #2C3424;
-  box-shadow: 0 0 5px #768064;
-}
-
-/* Nome do usuário */
-.user-info .name {
   font-weight: normal;
   color: #2C3424;
-}
-
-/* Container dos links dos ícones */
-.user-links a {
-  margin-left: 1rem;
-  font-size: 1.3rem;
-  color: #768064;
-  transition: color 0.3s ease;
-}
-
-.user-links a:hover {
-  color: #959581;
-}
-
-/* Ícones invisíveis por padrão */
-.user-links i {
-  color: #DADED8;
-  font-size: 2rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  transform-origin: center bottom;
-}
-
-#developers-list li:hover .user-links i {
-  opacity: 1;
-  pointer-events: auto;
-  animation: bounce 0.5s ease;
-  color: #CED9C7;
-  text-shadow: none;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
 }
 
 footer {

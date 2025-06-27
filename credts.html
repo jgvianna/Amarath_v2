@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Créditos - Híbrido de Turmas</title>
 
-  
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
   />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link rel="stylesheet" href="credts.css" />
-
+  <link rel="stylesheet" href="credts.css" />
 </head>
 <body>
   <nav class="navbar">
@@ -22,6 +20,7 @@
       <a href="index.html"><i class="fas fa-home"></i> Início</a>
       <a href="credts.html" class="active"><i class="fas fa-user"></i> Créditos</a>
       <a href="mecanicas.html"><i class="fas fa-cogs"></i> Mecânicas</a>
+      <a href="ods.html"><i class="fas fa-leaf"></i> ODS</a>
     </div>
   </nav>
 
@@ -29,44 +28,7 @@
     <h1>Créditos</h1>
 
     <h2>Desenvolvimento</h2>
-    <ul>
-      <li>
-        <span class="name">João Gabriel - Programação Front e back and</span>
-        <a href="https://wa.me/5521994910833" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://discord.com/users/joaosilva" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://github.com/joaosilva" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      </li>
-      <li>
-        <span class="name">Matheus Cataldo - Conteúdo e roteiro</span>
-        <a href="https://wa.me/5521999417111" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://discord.com/users/mariaoliveira" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://github.com/mariaoliveira" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      </li>
-      <li>
-        <span class="name">Lohan - Design gráfico</span>
-        <a href="https://wa.me/5521992295054 target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://discord.com/users/lucaspereira" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://github.com/lucaspereira" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      </li>
-       <li>
-        <span class="name">Michel - Design gráfico</span>
-        <a href="https://wa.me/5521990172208" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://discord.com/users/lucaspereira" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://github.com/lucaspereira" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      </li>
-       <li>
-        <span class="name">Matheus Cabral - Programação do game</span>
-        <a href="https://wa.me/5521985423938" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://discord.com/users/lucaspereira" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://github.com/lucaspereira" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      </li>
-       <li>
-        <span class="name">Luiza - Ilustrações</span>
-        <a href="https://wa.me/5521998744960" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://discord.com/users/lucaspereira" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-        <a href="https://github.com/lucaspereira" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      </li>
-    </ul>
+    <ul id="developers-list"></ul>
 
     <h2>Recursos</h2>
     <ul>
@@ -77,7 +39,6 @@
 
     <h2>Contato</h2>
     <p>Para dúvidas ou sugestões, envie um e-mail para <a href="mailto:contato@hibridoturmas.com">contato@hibridoturmas.com</a>.</p>
-
   </main>
 
   <footer>
@@ -87,6 +48,76 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    const developers = [
+      {
+        nome: "João Gabriel - Programação Front e back end",
+        foto: "JOAO.jpeg",
+        whatsapp: "https://whatsa.me/5521994910833"
+      },
+      {
+        nome: "Matheus Cataldo - Conteúdo e roteiro",
+        foto: "CATALDINHO.jpeg",
+        whatsapp: "https://wa.me/5521999417111"
+      },
+      {
+        nome: "Lohan - Design gráfico",
+        foto: "./assets/lohan.jpg",
+        whatsapp: "https://whatsa.me/5521992295054"
+      },
+      {
+        nome: "Michel - Design gráfico",
+        foto: "MITCH.jpeg",
+        whatsapp: "https://whatsa.me/5521990172208"
+      },
+      {
+        nome: "Matheus Cabral - Programação do game",
+        foto: "MATH.jpeg",
+        whatsapp: "https://whatsa.me/5521985423938"
+      },
+      {
+        nome: "Luiza - Ilustrações",
+        foto: "LUIZA.jpeg",
+        whatsapp: "https://whatsa.me/5521998744960"
+      }
+    ];
+
+    const ul = document.getElementById("developers-list");
+
+    developers.forEach(dev => {
+      const li = document.createElement("li");
+
+      const userInfo = document.createElement("div");
+      userInfo.classList.add("user-info");
+
+      const img = document.createElement("img");
+      img.classList.add("user-photo");
+      img.src = dev.foto;
+      img.alt = `Foto de ${dev.nome.split(" - ")[0]}`;
+
+      const spanName = document.createElement("span");
+      spanName.classList.add("name");
+      spanName.textContent = dev.nome;
+
+      userInfo.appendChild(img);
+      userInfo.appendChild(spanName);
+
+      const userLinks = document.createElement("div");
+      userLinks.classList.add("user-links");
+
+      const aWhats = document.createElement("a");
+      aWhats.href = dev.whatsapp;
+      aWhats.target = "_blank";
+      aWhats.title = "WhatsApp";
+      aWhats.innerHTML = '<i class="fab fa-whatsapp"></i>';
+
+      userLinks.appendChild(aWhats);
+
+      li.appendChild(userInfo);
+      li.appendChild(userLinks);
+
+      ul.appendChild(li);
+    });
   </script>
 </body>
 </html>
