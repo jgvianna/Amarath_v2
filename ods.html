@@ -17,12 +17,13 @@
 <body>
 
   <nav class="navbar">
-    <img class="logo" id="logo" alt="Logo Híbrido" />
+    <img class="logo" id="logo" alt="Logo Híbrido" src="fundo.png"/>
     <div class="nav-links">
       <a href="index.html"><i class="fas fa-home"></i> Início</a>
       <a href="credts.html"><i class="fas fa-user"></i> Créditos</a>
       <a href="mecanicas.html"><i class="fas fa-cogs"></i> Mecânicas</a>
-      <a href="ods.html" class="active"><i class="fas fa-leaf"></i> ODS</a>
+      <a href="dp.html"><i class="fas fa-comments"></i> Depoimentos</a>
+      <a href="ods.html"><i class="fas fa-leaf"></i> ODS</a>
     </div>
   </nav>
 
@@ -66,6 +67,10 @@
     img.alt = "ODS 15 - Vida Terrestre";
     img.className = "ods-img";
     container.appendChild(img);
+
+     const links = document.querySelectorAll('.nav-links a');
+    const current = location.pathname.split('/').pop() || 'index.html';
+    links.forEach(l => { if (l.getAttribute('href') === current) l.classList.add('active'); });
   </script>
 
 </body>

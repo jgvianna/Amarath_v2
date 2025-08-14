@@ -1,0 +1,162 @@
+ html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #2C3424;
+      color: #DADED8;
+    }
+
+    a {
+      color: #DADED8;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #959581;
+    }
+
+    .navbar {
+      background-color: #4C583E;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 4px solid #768064;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .nav-links a.active {
+      color: #768064;
+    }
+
+    /* === Depoimentos === */
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #DADED8;
+      text-shadow: 0 0 5px #768064;
+    }
+
+    .testimonials-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: #768064;
+      border-radius: 14px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 3px 12px rgba(105, 115, 83, 0.5);
+      color: #2C3424;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+      user-select: text;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: 0 8px 25px rgba(105, 115, 83, 0.7);
+    }
+
+    .testimonial-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2C3424;
+      box-shadow: 0 0 12px #aeb79b;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.5rem;
+      color: #2C3424;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.03em;
+      user-select: text;
+    }
+
+    .testimonial-text {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: #2C3424;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      user-select: text;
+      max-height: 11rem;
+      overflow-y: auto;
+      padding-right: 0.3rem;
+    }
+
+    .testimonial-text::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .testimonial-text::-webkit-scrollbar-thumb {
+      background-color: #aeb79b;
+      border-radius: 10px;
+    }
+
+    .testimonial-text {
+      scrollbar-width: thin;
+      scrollbar-color: #aeb79b transparent;
+    }
+
+    @media (max-width: 480px) {
+      .testimonial-card {
+        padding: 1.3rem 1.5rem;
+      }
+      .testimonial-photo {
+        width: 75px;
+        height: 75px;
+        margin-bottom: 0.8rem;
+      }
+      .testimonial-name {
+        font-size: 1.3rem;
+      }
+      .testimonial-text {
+        font-size: 1rem;
+        max-height: 9rem;
+      }
+    }
+
+    
+    footer {
+      background: #4C583E;
+      padding: 2rem 1rem;
+      border-top: 4px solid #768064;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #DADED8;
+      margin-top: 4rem;
+    }

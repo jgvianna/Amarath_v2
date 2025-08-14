@@ -4,27 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Amarath</title>
-
   <!-- Fonte externa Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet" />
-
   <!-- Font Awesome para ícones -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="inicio.css" />
 </head>
-
 <body>
-
   <nav class="navbar">
-    <img class="logo" id="logo" alt="Logo Híbrido" />
+    <img class="logo" id="logo" alt="Logo Híbrido" src="fundo.png"/>
     <div class="nav-links">
-      <a href="inicio.html" class="active"><i class="fas fa-home"></i> Início</a>
+      <a href="index.html"><i class="fas fa-home"></i> Início</a>
       <a href="credts.html"><i class="fas fa-user"></i> Créditos</a>
       <a href="mecanicas.html"><i class="fas fa-cogs"></i> Mecânicas</a>
+      <a href="dp.html"><i class="fas fa-comments"></i> Depoimentos</a>
       <a href="ods.html"><i class="fas fa-leaf"></i> ODS</a>
     </div>
   </nav>
@@ -34,13 +27,9 @@
       <h1 id="tituloPrincipal"></h1>
       <h2>DESCUBRA A HISTÓRIA</h2>
       <p>
-        Um projeto que combina diferentes salas, mentes criativas e muita energia em algo surpreendente.
-        Acompanhe a jornada de um estudante comum enfrentando desafios extraordinários em um universo caótico.
+        Um projeto que combina diferentes salas, mentes criativas e muita energia em algo surpreendente. Acompanhe a jornada de um estudante comum enfrentando desafios extraordinários em um universo caótico.
       </p>
       <a href="#secao" class="hero-btn">Saiba Mais →</a>
-    </div>
-    <div class="hero-image">
-      <img id="imagemPrincipal" alt="Imagem principal" />
     </div>
   </header>
 
@@ -49,8 +38,7 @@
       <img src="ChatGPT Image 18 de abr. de 2025, 22_53_51.png" alt="Home" />
       <h3>Home</h3>
       <p>
-        Um projeto que combina diferentes salas, mentes criativas e muita energia em algo surpreendente.
-        Acompanhe a jornada de um estudante comum enfrentando desafios extraordinários em um universo caótico.
+        Um projeto que combina diferentes salas, mentes criativas e muita energia em algo surpreendente. Acompanhe a jornada de um estudante comum enfrentando desafios extraordinários em um universo caótico.
       </p>
     </div>
     <div class="section-box" data-aos="zoom-in" data-aos-delay="100">
@@ -82,14 +70,18 @@
   <script>
     // Conteúdo dinâmico com JS
     document.getElementById('tituloPrincipal').textContent = 'Amarath';
-    document.getElementById('imagemPrincipal').src = './assets/HISORIA.png';
-    document.getElementById('imagemPrincipal').alt = 'Imagem principal';
 
     // Logo dinâmico
     const logo = document.getElementById('logo');
     logo.src = './assets/logo.png';
     logo.alt = 'Logo Híbrido';
-  </script>
 
+    // Navbar ativo
+    const links = document.querySelectorAll('.nav-links a');
+    const current = location.pathname.split('/').pop() || 'index.html';
+    links.forEach(l => {
+      if (l.getAttribute('href') === current) l.classList.add('active');
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Depoimentos - Híbrido de Turmas</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="dp.css">
+
+  
+</head>
+<body>
+  <nav class="navbar">
+    <img class="logo" id="logo" alt="Logo Híbrido" src="fundo.png"/>
+    <div class="nav-links">
+       <a href="index.html"><i class="fas fa-home"></i> Início</a>
+      <a href="credts.html"><i class="fas fa-user"></i> Créditos</a>
+      <a href="mecanicas.html"><i class="fas fa-cogs"></i> Mecânicas</a>
+      <a href="dp.html"><i class="fas fa-comments"></i> Depoimentos</a>
+      <a href="ods.html"><i class="fas fa-leaf"></i> ODS</a>
+    </div>
+  </nav>
+
+  <main data-aos="fade-up">
+    <h1>Depoimentos dos Criadores</h1>
+    <section id="testimonials-list" class="testimonials-container"></section>
+  </main>
+
+  <footer>
+    © 2025 Híbrido de Turmas. Todos os direitos reservados.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+
+    const depoimentos = [
+      {
+        nome: "João Gabriel",
+        foto: "JOAO.jpeg",
+        texto: "Foi um projeto intensivo que exigiu bastante paciência e compreensão de todo mundo. Trabalhar com pessoas que a gente não conhecia foi um desafio, porque tivemos que nos adaptar ao jeito e gosto de cada um. Mas, no fim, conseguimos nos entrosar, entregar um bom resultado e ainda curtir uns momentos de resenha juntos"
+          
+      },
+      {
+        nome: "Matheus Cataldo",
+        foto: "CATALDINHO.jpeg",
+        texto:
+          "Pra mim o desenvolvimento foi muito interessante, além de conhecer novas pessoas, pude descobrir com o que eu mais gosto de trabalhar.",
+      },
+      {
+        nome: "Lohan",
+        foto: "./assets/lohan.jpg",
+        texto:
+          "Foi trabalhoso, mas divertido.Ver seu trabalho em um jogo é uma sensação de alívio e admiração, você vê aquilo tomando vida, aquilo que anteriormente você estava quebrando a cabeça para saber qual tom de verde iria combinar com o cenário, agora ver tudo pronto vejo que valeu o esforço.",
+      },
+      {
+        nome: "Michel",
+        foto: "MITCH.jpeg",
+        texto:
+          "Foi gratificante desenvolver artes que dialogam com a mensagem do game e trazer uma identidade única ao projeto.",
+      },
+      {
+        nome: "Matheus Cabral",
+        foto: "MATH.jpeg",
+        texto:
+          "A programação do game exigiu dedicação, mas ver o projeto ganhar vida é recompensador e motivador para continuar aprendendo.",
+      },
+      {
+        nome: "Luiza",
+        foto: "LUIZA.jpeg",
+        texto:
+          "Ilustrar para o game me permitiu experimentar diferentes estilos e reforçar a conexão visual com os jogadores.",
+      },
+    ];
+
+    const container = document.getElementById("testimonials-list");
+
+    depoimentos.forEach((dep) => {
+      const card = document.createElement("article");
+      card.classList.add("testimonial-card");
+      card.setAttribute("tabindex", "0");
+
+      const img = document.createElement("img");
+      img.classList.add("testimonial-photo");
+      img.src = dep.foto;
+      img.alt = `Foto de ${dep.nome}`;
+
+      const name = document.createElement("h3");
+      name.classList.add("testimonial-name");
+      name.textContent = dep.nome;
+
+      const text = document.createElement("p");
+      text.classList.add("testimonial-text");
+      text.textContent = dep.texto;
+
+      card.appendChild(img);
+      card.appendChild(name);
+      card.appendChild(text);
+
+      container.appendChild(card);
+    });
+
+     const links = document.querySelectorAll('.nav-links a');
+    const current = location.pathname.split('/').pop() || 'index.html';
+    links.forEach(l => { if (l.getAttribute('href') === current) l.classList.add('active'); });
+  </script>
+</body>
+</html>

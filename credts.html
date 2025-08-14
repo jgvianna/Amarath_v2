@@ -6,118 +6,115 @@
   <title>Créditos - Híbrido de Turmas</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap" rel="stylesheet" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-  />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <link rel="stylesheet" href="credts.css" />
 </head>
 <body>
   <nav class="navbar">
-    <img class="logo" src="./assets/logo.png" alt="Logo Híbrido" />
+    <img class="logo" id="logo" alt="Logo Híbrido" src="fundo.png"/>
     <div class="nav-links">
       <a href="index.html"><i class="fas fa-home"></i> Início</a>
-      <a href="credts.html" class="active"><i class="fas fa-user"></i> Créditos</a>
+      <a href="credts.html"><i class="fas fa-user"></i> Créditos</a>
       <a href="mecanicas.html"><i class="fas fa-cogs"></i> Mecânicas</a>
+      <a href="dp.html"><i class="fas fa-comments"></i> Depoimentos</a>
       <a href="ods.html"><i class="fas fa-leaf"></i> ODS</a>
     </div>
   </nav>
 
-  <main data-aos="fade-up">
-    <h1>Créditos</h1>
-
-    <h2>Desenvolvimento</h2>
+  <main>
+    <h1 class="page-title">Créditos - Híbrido de Turmas</h1>
     <ul id="developers-list"></ul>
 
-    <h2>Recursos</h2>
-    <ul>
-      <li>Fontes: Google Fonts (Share Tech Mono, Bebas Neue)</li>
-      <li>Ícones: Font Awesome</li>
-      <li>Biblioteca de animação: AOS (Animate On Scroll)</li>
-    </ul>
+     <div class="group-photo-container">
+    <h2>Foto do Grupo</h2>
+    <img class="group-photo" src="grupo.jpg" alt="Foto de todo o grupo" />
+  </div>
 
-    <h2>Contato</h2>
-    <p>Para dúvidas ou sugestões, envie um e-mail para <a href="mailto:contato@hibridoturmas.com">contato@hibridoturmas.com</a>.</p>
+  <ul id="developers-list"></ul>
   </main>
 
-  <footer>
-    © 2025 Híbrido de Turmas. Todos os direitos reservados.
-  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <div class="modal" id="devModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalNome" tabindex="-1">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Fechar">&times;</button>
+      <img id="modalFoto" src="" alt="Foto ampliada do desenvolvedor" />
+      <h2 id="modalNome"></h2>
+      <a id="modalWhats" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+      </a>
+    </div>
+  </div>
+
   <script>
-    AOS.init();
-
     const developers = [
-      {
-        nome: "João Gabriel - Programação Front e back end",
-        foto: "JOAO.jpeg",
-        whatsapp: "https://whatsa.me/5521994910833"
-      },
-      {
-        nome: "Matheus Cataldo - Conteúdo e roteiro",
-        foto: "CATALDINHO.jpeg",
-        whatsapp: "https://wa.me/5521999417111"
-      },
-      {
-        nome: "Lohan - Design gráfico",
-        foto: "./assets/lohan.jpg",
-        whatsapp: "https://whatsa.me/5521992295054"
-      },
-      {
-        nome: "Michel - Design gráfico",
-        foto: "MITCH.jpeg",
-        whatsapp: "https://whatsa.me/5521990172208"
-      },
-      {
-        nome: "Matheus Cabral - Programação do game",
-        foto: "MATH.jpeg",
-        whatsapp: "https://whatsa.me/5521985423938"
-      },
-      {
-        nome: "Luiza - Ilustrações",
-        foto: "LUIZA.jpeg",
-        whatsapp: "https://whatsa.me/5521998744960"
-      }
+      { nome: "João Gabriel - Programação Front e Back End", foto: "JOAO.jpeg", whatsapp: "https://whatsa.me/5521994910833" },
+      { nome: "Matheus Cataldo - Conteúdo e roteiro", foto: "CATALDINHO.jpeg", whatsapp: "https://wa.me/5521999417111" },
+      { nome: "Lohan - Design gráfico", foto: "./assets/lohan.jpg", whatsapp: "https://whatsa.me/5521992295054" },
+      { nome: "Michel - Design gráfico", foto: "MITCH.jpeg", whatsapp: "https://whatsa.me/5521990172208" },
+      { nome: "Matheus Cabral - Programação do game", foto: "MATH.jpeg", whatsapp: "https://whatsa.me/5521985423938" },
+      { nome: "Luiza - Ilustrações", foto: "LUIZA.jpeg", whatsapp: "https://whatsa.me/5521998744960" }
     ];
 
-    const ul = document.getElementById("developers-list");
+    const list = document.getElementById("developers-list");
+    const modal = document.getElementById("devModal");
+    const modalFoto = document.getElementById("modalFoto");
+    const modalNome = document.getElementById("modalNome");
+    const modalWhats = document.getElementById("modalWhats");
+    const closeBtn = modal.querySelector(".close-modal");
 
     developers.forEach(dev => {
       const li = document.createElement("li");
-
-      const userInfo = document.createElement("div");
-      userInfo.classList.add("user-info");
+      li.classList.add("developer-item"); 
 
       const img = document.createElement("img");
       img.classList.add("user-photo");
       img.src = dev.foto;
       img.alt = `Foto de ${dev.nome.split(" - ")[0]}`;
+      img.title = `Clique para ampliar a foto de ${dev.nome.split(" - ")[0]}`;
 
       const spanName = document.createElement("span");
       spanName.classList.add("name");
       spanName.textContent = dev.nome;
 
-      userInfo.appendChild(img);
-      userInfo.appendChild(spanName);
+      li.appendChild(img);
+      li.appendChild(spanName);
+      list.appendChild(li);
 
-      const userLinks = document.createElement("div");
-      userLinks.classList.add("user-links");
+      // Clique no LI inteiro abre o modal
+      li.addEventListener("click", () => {
+        modal.setAttribute("aria-hidden", "false");
+        modal.classList.add("open");
+        document.body.classList.add("modal-open");
 
-      const aWhats = document.createElement("a");
-      aWhats.href = dev.whatsapp;
-      aWhats.target = "_blank";
-      aWhats.title = "WhatsApp";
-      aWhats.innerHTML = '<i class="fab fa-whatsapp"></i>';
-
-      userLinks.appendChild(aWhats);
-
-      li.appendChild(userInfo);
-      li.appendChild(userLinks);
-
-      ul.appendChild(li);
+        modalFoto.src = dev.foto;
+        modalFoto.alt = `Foto ampliada de ${dev.nome.split(" - ")[0]}`;
+        modalNome.textContent = dev.nome;
+        modalWhats.href = dev.whatsapp;
+      });
     });
+
+    function closeModal() {
+      modal.setAttribute("aria-hidden", "true");
+      modal.classList.remove("open");
+      document.body.classList.remove("modal-open");
+      modalFoto.src = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", e => {
+      if (e.target === modal) closeModal();
+    });
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape" && modal.classList.contains("open")) {
+        closeModal();
+      }
+    });
+
+    // Navbar ativo
+    const links = document.querySelectorAll('.nav-links a');
+    const current = location.pathname.split('/').pop() || 'index.html';
+    links.forEach(l => { if (l.getAttribute('href') === current) l.classList.add('active'); });
   </script>
 </body>
 </html>
